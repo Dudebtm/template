@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<link rel="stylesheet" href="main.css">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+   <link rel="stylesheet" href="../css/style.css">
+   <title>Portfolio</title>
+</head>
+
+<body>
+   <header class="header">
+      <nav class="nav__wrapper">
+         <a href="main.html" class="nav__logo">About me</a>
+         <div class="nav__menu">
+            <ul class="nav__list">
+               <li class="nav__item"> <a href="./main.html" class="nav__link">Home</a> </li>
+               <li class="nav__item"> <a href="./about.html" class="nav__link">About</a> </li>
+            </ul>
+            <i class="uil uil-bars nav__close icon__btn" onclick="openClose()"></i>
+         </div>
+      </nav>
+   </header>
+   <main class="main">
+      <section class="home section" id="home">
+         <div class="regular__wrapper mx__auto">
+            <h1 class="section__title">Hi I am Manvith</h1>
+            <p class="section__description">
+               Hello my name is Manvith. <br>
+               I like to code and play basketball. I am able to code Html, Css, Javascript. I am able to speak two languages and i am learning two other languages which are Spanish and Japanese. I have found an interest in learning Japanese out-side of school because I like them for their culture places and the cars they have in their country. <br>
+               <a class="text__link" onclick="redirect_Page()">More info!</a>
+               <br><br>
+            </p>
+            <div class="section__info">
+               
+            </div>
+         </div>
+      </section>
+   </main>
+</body>
+<script>
+   const jsConfetti = new JSConfetti();
+
+function confettiFY() {
+   jsConfetti.addConfetti({
+      emojis: ['👍', '😊', '😁'],
+      confettiRadius: 6,
+      confettiNumber: 500,
+   });
+}
+document.querySelector(".text__link").addEventListener("click", confettiFY);
+
+const page = {
+   windows: 'about.html',
+}
+    let redirect_Page = () => {
+        let iCnt = 3;	// for time in seconds.
+        let iTimerId = setInterval(function () {
+            iCnt--;     // decrease counter by 1.
+                    if (iCnt === 0) {
+                // now, redirect page.
+                window.location.href = 'about.html'
+                clearInterval(iTimerId);		// clear time interval.
+            }
+        }, 1000);
+        (" interval : " + iTimerId);
+    
+    }
+</script>
+</html>
